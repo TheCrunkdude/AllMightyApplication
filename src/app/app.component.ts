@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterOutlet, RouterLink } from '@angular/router';
 
 import { ButtonModule } from '@syncfusion/ej2-angular-buttons'
 import { TestComponentComponent } from "./Testing-Suite/test-component/test-component.component";
@@ -7,7 +7,7 @@ import { TestComponentComponent } from "./Testing-Suite/test-component/test-comp
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, ButtonModule, TestComponentComponent], 
+  imports: [RouterOutlet, ButtonModule,RouterLink, TestComponentComponent], 
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
