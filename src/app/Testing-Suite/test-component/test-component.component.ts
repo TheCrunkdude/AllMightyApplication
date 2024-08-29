@@ -15,11 +15,22 @@ constructor (private ApiserviceComponent: Apitest2Service) {}
   ngOnInit(): void {
     //alert ('popo inicializando')
     document.getElementById("ClassMain")?.remove()
+    
 
   }
-    testMethodApi(){
+    async testMethodApi(){
       if (this.ApiserviceComponent) {
-        alert (this.ApiserviceComponent.apitestmethod());
+
+        let result = 'test';
+        await this.ApiserviceComponent.apitestmethod()
+        .subscribe(
+          (response: any) => {
+              console.log(response);
+              result = response;
+              alert(result);
+          })
+
+
       } else {
         console.error('Child component is not availablee!');
       }
