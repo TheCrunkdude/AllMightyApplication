@@ -25,7 +25,7 @@ constructor (private ApiserviceComponent: Apitest2Service) {}
       if (this.ApiserviceComponent) {
         alert (this.ApiserviceComponent.apitestmethod());
       } else {
-        console.error('Child component is not available!');
+        console.error('Child component is not availablee!');
       }
      
     }
