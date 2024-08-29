@@ -16,9 +16,13 @@ export class Apitest2Service {
 
   // Method to get data from the API
   apitestmethod(): Observable<any> {
+    //MODIFY THIS SERBVICES ACCORDING TO THE REQUIREMENTS, THIS WILL GET THE RESPONSE AS INDICATED IN THE API RESPONSE
     alert ('request to ' + this.apiUrl)
     return this.http.get(this.apiUrl, {responseType: 'text'});
   }
+
+  //WRITE SOME OTHER METHODS FOR POST, UPDATE AND DELETE AND HOOK THEM ACCORDINGLY WITH THE API 
+  //==>
 
   // Method to handle errors
   private handleError(error: any): Observable<never> {
