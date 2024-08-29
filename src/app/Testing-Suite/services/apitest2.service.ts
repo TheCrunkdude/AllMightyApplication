@@ -10,14 +10,14 @@ import { Observable } from 'rxjs/internal/Observable';
 export class Apitest2Service {
 
 
-  private apiUrl = 'https://localhost:7161/AllMighty'; // Replace with your API endpoint
+  private apiUrl = 'https://localhost:7173/AllMightyConfiguration'; // Replace with your API endpoint
 
   constructor(private http: HttpClient) { } // Inject HttpClient
 
   // Method to get data from the API
   apitestmethod(): Observable<any> {
-    alert ('apitestmethodworking')
-    return this.http.get<any>(this.apiUrl);
+    alert ('request to ' + this.apiUrl)
+    return this.http.get(this.apiUrl, {responseType: 'text'});
   }
 
   // Method to handle errors
