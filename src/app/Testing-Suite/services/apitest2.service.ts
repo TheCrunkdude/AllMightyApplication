@@ -13,7 +13,7 @@ import { EmployeeTable } from '../interfaces/employeetable';
 export class Apitest2Service {
 
 
-  private apiUrl = 'https://localhost:7161/GetEmployees'; // Replace with your API endpoint
+  private apiUrl = 'https://localhost:7161/'; // Replace with your API endpoint
 
 
   constructor(private http: HttpClient) { } // Inject HttpClient
@@ -28,12 +28,11 @@ export class Apitest2Service {
   //WRITE SOME OTHER METHODS FOR POST, UPDATE AND DELETE AND HOOK THEM ACCORDINGLY WITH THE API 
   //==>
   GetemployeesMethod(): Observable<EmployeeTable[]> {
-    return this.http.get<EmployeeTable[]>(this.apiUrl);
+    return this.http.get<EmployeeTable[]>(this.apiUrl+ 'GetEmployees');
   }
 
-  apipostmethod(body: Body2): Observable<any> {
-    alert(body)
-    return this.http.post(this.apiUrl, body, { responseType: 'text' });
+  apipostmethod(body: EmployeeTable): Observable<any> {
+    return this.http.post(this.apiUrl + '', body, { responseType: 'text' });
   }
 
   apiputmethod(propiedad1: string, propiedad2: boolean): Observable<any> {

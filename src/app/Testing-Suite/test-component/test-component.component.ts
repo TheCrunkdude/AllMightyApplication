@@ -4,7 +4,9 @@ import { Apitest2Service } from '../services/apitest2.service';
 import { Body2 } from '../interfaces/body-interface';
 import { EmployeeTable, EmployeeTable2 } from '../interfaces/employeetable';
 import { MatPaginator } from '@angular/material/paginator';
-import {MatTableDataSource} from '@angular/material/table'
+import {MatTableDataSource} from '@angular/material/table';
+import * as alertify from 'alertifyjs';
+
 @Component({
   selector: 'app-test-component',
   templateUrl: './test-component.component.html',
@@ -20,7 +22,14 @@ export class TestComponentComponent implements OnInit {
   title0= 'Get Employees'
   body: Body2;
   result2: EmployeeTable[] = [];
-
+  test: EmployeeTable = {
+    employeeID : 0,
+    deptID : 0,
+    age : 0,
+    firstName : ' ',
+    lastName : ' ',
+    salary : 0
+  };
 
 
   constructor(private ApiserviceComponent: Apitest2Service) 
@@ -100,16 +109,18 @@ export class TestComponentComponent implements OnInit {
       console.error('Child component is not availablee!');
     }
   }
+
+  // Post//
+
   async postcomponentMethodApi() {
     if (this.ApiserviceComponent) {
-
+      alertify.success(this.test.employeeID)
       let result = 'post';
-      this.ApiserviceComponent.apipostmethod(this.body)
+      this.ApiserviceComponent.apipostmethod(this.test)
         .subscribe(
           (response: any) => {
             console.log(response);
             result = response;
-            alert(result);
           })
 
 
@@ -118,6 +129,7 @@ export class TestComponentComponent implements OnInit {
     }
 
   }
+  
 
 
   async putcomponentMethodApi() {
