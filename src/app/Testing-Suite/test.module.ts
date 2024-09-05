@@ -6,11 +6,11 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutes } from '../app.routes';
 import { Router } from '@angular/router';
-
+import { MaterialModule } from './MaterialModule';
 
 @NgModule({
   declarations: [TestComponentComponent],
-  imports: [CommonModule, BrowserModule,AppRoutes],
+  imports: [CommonModule, BrowserModule,AppRoutes, MaterialModule],
   providers:[provideHttpClient()]
 })
 

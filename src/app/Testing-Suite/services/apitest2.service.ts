@@ -3,6 +3,7 @@ import { Injectable, NgModule } from '@angular/core';
 import { catchError, map, throwError } from 'rxjs';
 import { Observable } from 'rxjs/internal/Observable';
 import { Body2 } from '../test-component/test-component.component';
+import { EmployeeTable } from '../interfaces/employeetable';
 
 @Injectable({
   providedIn: 'root',
@@ -12,7 +13,7 @@ import { Body2 } from '../test-component/test-component.component';
 export class Apitest2Service {
 
 
-  private apiUrl = 'https://localhost:7161/AllMighty'; // Replace with your API endpoint
+  private apiUrl = 'https://localhost:7161/GetEmployees'; // Replace with your API endpoint
 
 
   constructor(private http: HttpClient) { } // Inject HttpClient
@@ -26,6 +27,10 @@ export class Apitest2Service {
 
   //WRITE SOME OTHER METHODS FOR POST, UPDATE AND DELETE AND HOOK THEM ACCORDINGLY WITH THE API 
   //==>
+  GetemployeesMethod(): Observable<EmployeeTable[]> {
+    return this.http.get<EmployeeTable[]>(this.apiUrl);
+  }
+
   apipostmethod(body: Body2): Observable<any> {
     alert(body)
     return this.http.post(this.apiUrl, body, { responseType: 'text' });
