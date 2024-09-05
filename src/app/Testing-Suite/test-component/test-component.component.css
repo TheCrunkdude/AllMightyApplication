@@ -54,8 +54,6 @@ main {
   width: 100%;
   min-height: 100%;
   display: flex;
-  justify-content: center;
-  align-items: center;
   padding: 1rem;
   box-sizing: inherit;
   position: relative;
@@ -84,7 +82,7 @@ main {
 .divider {
   width: 1px;
   background: var(--red-to-pink-to-purple-vertical-gradient);
-  margin-inline: 0.5rem;
+  margin-left: 20px;
 }
 
 .pill-group {
@@ -176,10 +174,12 @@ main {
     width: max-content;
   }
 
-  .divider {
-    height: 1px;
-    width: 100%;
-    background: var(--red-to-pink-to-purple-horizontal-gradient);
+  .rightside {
+  
+    width: 20%;
+    align-items: right;
+    justify-content: right;
     margin-block: 1.5rem;
   }
+
 }

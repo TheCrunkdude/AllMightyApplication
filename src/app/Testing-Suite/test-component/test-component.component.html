@@ -32,19 +32,19 @@
 
       <h1>{{ title }}</h1>
       <span (click)="testMethodApi()"><a routerLink="/Test" class="botoneschidos"> Test The Route</a></span>
-      <h2> TABLE HTML</h2>
+      <!-- <h2> TABLE HTML</h2>
       <ul>
         <li *ngFor="let item of result">
           <th>employeeID</th>
-          {{ item.employeeID }} <!-- Replace `name` with your actual data field -->
+          {{ item.employeeID }} 
           {{ item.deptID }}
           
         </li>
-      </ul>
+      </ul> -->
       
       <H2> TABLE </H2>
       <h2>User Details</h2>
-      <div style="width:400px" class="mat-elevation-z8">
+      <div style="width:800px" class="mat-elevation-z8">
         <table mat-table [dataSource]="dataSource">
 
           <!--- Note that these columns can be defined in any order.
@@ -95,7 +95,7 @@
 
 
       <h1>{{ title }}</h1>
-      <span (click)="GetemployeesMethod()"><a routerLink="/Getemployees" class="botoneschidos"> Get the employees
+      <span (click)="GetemployeesMethod()"><a routerLink="/Getemployees" class="botoneschidos"> Get the employees table
         </a></span>
 
         <div>
@@ -149,7 +149,7 @@
           </table>
         </div>
       
-      <span (click)="postcomponentMethodApi()"><a routerLink="/Test" class="botoneschidos"> Post </a></span>
+      <span (click)="postcomponentMethodApi()"><a routerLink="/Test" class="botoneschidos"> New employee (post method) </a></span>
       <h1>{{title3}}</h1>
       <span (click)="putcomponentMethodApi()"><a routerLink="/Test" class="botoneschidos"> Put </a></span>
       <h1>{{title4}}</h1>
@@ -161,7 +161,7 @@
 
     <router-outlet></router-outlet>
     <div class="divider" role="separator" aria-label="Divider"></div>
-    <div class="right-side">
+    <div class="rightside">
       <div class="pill-group">
         @for (item of [
         {title: 'Test API', link: '/Test'},

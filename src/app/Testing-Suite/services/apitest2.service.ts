@@ -32,7 +32,7 @@ export class Apitest2Service {
   }
 
   apipostmethod(body: EmployeeTable): Observable<any> {
-    return this.http.post(this.apiUrl + '', body, { responseType: 'text' });
+    return this.http.post(this.apiUrl + 'CreateEmployee', body, { responseType: 'text' });
   }
 
   apiputmethod(propiedad1: string, propiedad2: boolean): Observable<any> {

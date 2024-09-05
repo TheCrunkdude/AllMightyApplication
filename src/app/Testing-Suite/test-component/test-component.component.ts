@@ -114,13 +114,14 @@ export class TestComponentComponent implements OnInit {
 
   async postcomponentMethodApi() {
     if (this.ApiserviceComponent) {
-      alertify.success(this.test.employeeID)
       let result = 'post';
       this.ApiserviceComponent.apipostmethod(this.test)
         .subscribe(
           (response: any) => {
             console.log(response);
             result = response;
+            alertify.success(result)
+
           })
 
 
