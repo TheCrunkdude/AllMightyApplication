@@ -127,22 +127,22 @@
             <tbody>
               <tr>
                 <td>
-                  <input id="employeeID" type="text" [(ngModel)]="test.employeeID">
+                  <input id="employeeID" type="text" [(ngModel)]="employeeRequest.employeeID">
                 </td>
                 <td>
-                  <input id="deptID" type="text" [(ngModel)]="test.deptID">
+                  <input id="deptID" type="text" [(ngModel)]="employeeRequest.deptID">
                 </td>
                 <td>
-                  <input id="age" type="text" [(ngModel)]="test.age">
+                  <input id="age" type="text" [(ngModel)]="employeeRequest.age">
                 </td>
                 <td>
-                  <input id="firstName" type="text" [(ngModel)]="test.firstName">
+                  <input id="firstName" type="text" [(ngModel)]="employeeRequest.firstName">
                 </td>
                 <td>
-                  <input id="lastName" type="text" [(ngModel)]="test.lastName">
+                  <input id="lastName" type="text" [(ngModel)]="employeeRequest.lastName">
                 </td>
                 <td>
-                  <input id="salary" type="text" [(ngModel)]="test.salary">
+                  <input id="salary" type="text" [(ngModel)]="employeeRequest.salary">
                 </td>
               </tr>
             </tbody>
@@ -151,7 +151,10 @@
       
       <span (click)="postcomponentMethodApi()"><a routerLink="/Test" class="botoneschidos"> New employee (post method) </a></span>
       <h1>{{title3}}</h1>
+      
       <span (click)="putcomponentMethodApi()"><a routerLink="/Test" class="botoneschidos"> Put </a></span>
+        <h1>ID Que quieres eliminar: </h1>      
+          <input id="employeeID" type="text" [(ngModel)]="employeeRequest.employeeID">        
       <h1>{{title4}}</h1>
       <span (click)="deletecomponentMethodApi()"><a routerLink="/Test" class="botoneschidos"> Delete </a></span>
       <div class="e-section-control">

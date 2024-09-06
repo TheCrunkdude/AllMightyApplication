@@ -22,7 +22,7 @@ export class TestComponentComponent implements OnInit {
   title0= 'Get Employees'
   body: Body2;
   result2: EmployeeTable[] = [];
-  test: EmployeeTable = {
+  employeeRequest: EmployeeTable = {
     employeeID : 0,
     deptID : 0,
     age : 0,
@@ -60,7 +60,7 @@ export class TestComponentComponent implements OnInit {
           (response: any) => {
             console.log(response);
             result = response;
-            alert(result);
+            alertify.success(result);
           })
     } else {
       console.error('Child component is not availablee!');
@@ -78,29 +78,6 @@ export class TestComponentComponent implements OnInit {
       this.ApiserviceComponent.GetemployeesMethod()
         .subscribe(
           response => {
-            // //CLASS LIST MOCKUP
-            // const mockEmployees: EmployeeTable2[] = [
-            //   new EmployeeTable2(1, 101, "Alice", "Smith", 70000),
-            //   new EmployeeTable2(2, 102, "Bob", "Johnson", 80000),
-            //   new EmployeeTable2(3, 103, "Charlie", "Williams", 90000),
-            //   new EmployeeTable2(4, 104, "Diana", "Brown", 85000),
-            // ];
-
-            // //HOW TO MAP AN OBJECT TO AN ARRAY WITH SPECIFIC CLASS
-            // response.map(x => {
-            //   const employeetable: EmployeeTable = {
-            //     employeeID: 0,
-            //     deptID: 0,
-            //     age: 0,
-            //     firstName: "popo",
-            //     lastName: "popo",
-            //     salary: 0
-            //   };
-            //   alert(employeetable);
-            //   console.log(employeetable);
-            //   this.result2.push(employeetable);
-            // });
-
             this.result = response;
             this.dataSource = new MatTableDataSource<EmployeeTable>(this.result);
             this.dataSource.paginator = this.paginator;
@@ -115,7 +92,7 @@ export class TestComponentComponent implements OnInit {
   async postcomponentMethodApi() {
     if (this.ApiserviceComponent) {
       let result = 'post';
-      this.ApiserviceComponent.apipostmethod(this.test)
+      this.ApiserviceComponent.apipostmethod(this.employeeRequest)
         .subscribe(
           (response: any) => {
             console.log(response);
@@ -131,24 +108,13 @@ export class TestComponentComponent implements OnInit {
 
   }
   
-
-
   async putcomponentMethodApi() {
     if (this.ApiserviceComponent) {
-
       let result = 'put';
-
-      const data = 'pipipipipi'
-      const data2 = true
-      this.ApiserviceComponent.apiputmethod(data, data2)
-        .subscribe(
-          (response: any) => {
-            console.log(response);
-            result = response;
-            alert(result);
-          })
+      this.ApiserviceComponent.apiputmethod(this.employeeRequest);
+      alertify.success('POPO');
     } else {
-      console.error('Child component is not availablee!');
+      console.error('PutMethod component is not available!');
     }
 
   }
@@ -158,14 +124,13 @@ export class TestComponentComponent implements OnInit {
 
       let result = 'delete';
 
-      const data = 'pipipipipi'
-      const data2 = true
-      this.ApiserviceComponent.apideletemethod(data, data2)
+      this.ApiserviceComponent.apideletemethod(this.employeeRequest.employeeID)
         .subscribe(
           (response: any) => {
             console.log(response);
             result = response;
-            alert(result);
+            alertify.success(result);
+
           })
     } else {
       console.error('Child component is not availablee!');

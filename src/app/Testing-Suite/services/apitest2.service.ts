@@ -21,8 +21,7 @@ export class Apitest2Service {
   // Method to get data from the API
   apitestmethod(): Observable<any> {
     //MODIFY THIS SERBVICES ACCORDING TO THE REQUIREMENTS, THIS WILL GET THE RESPONSE AS INDICATED IN THE API RESPONSE
-    alert('request to ' + this.apiUrl)
-    return this.http.get(this.apiUrl, { responseType: 'text' });
+    return this.http.get(this.apiUrl+'GetAllMightyAPI', { responseType: 'text' });
   }
 
   //WRITE SOME OTHER METHODS FOR POST, UPDATE AND DELETE AND HOOK THEM ACCORDINGLY WITH THE API 
@@ -35,15 +34,13 @@ export class Apitest2Service {
     return this.http.post(this.apiUrl + 'CreateEmployee', body, { responseType: 'text' });
   }
 
-  apiputmethod(propiedad1: string, propiedad2: boolean): Observable<any> {
-    const finalurl= this.apiUrl + '?propiedad1=' + propiedad1 + '&propiedad2=' +propiedad2
-    return this.http.put<string>(finalurl, null, { responseType: 'json' }  );
-
+  apiputmethod(body: EmployeeTable): Observable<string> {
+    return this.http.put<string>(this.apiUrl + 'UpdateEmployee', body);
   }
 
-  apideletemethod(propiedad1: string, propiedad2: boolean): Observable<any> {
-    const finalurl= this.apiUrl + '?propiedad1=' + propiedad1 + '&propiedad2=' +propiedad2
-    return this.http.delete<string>(finalurl, { responseType: 'json' }  );
+  apideletemethod(propiedad1: number): Observable<any> {
+    const finalurl= this.apiUrl + 'DeleteEmployee?employeeID=' + propiedad1
+    return this.http.delete(finalurl  );
 
   }
 
