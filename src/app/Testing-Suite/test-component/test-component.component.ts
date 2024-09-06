@@ -111,7 +111,7 @@ export class TestComponentComponent implements OnInit {
   async putcomponentMethodApi() {
     if (this.ApiserviceComponent) {
       let result = 'put';
-      this.ApiserviceComponent.apiputmethod(this.employeeRequest);
+      this.ApiserviceComponent.apiputmethod(this.employeeRequest).subscribe();
       alertify.success('POPO');
     } else {
       console.error('PutMethod component is not available!');
