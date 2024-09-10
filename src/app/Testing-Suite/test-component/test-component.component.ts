@@ -110,8 +110,8 @@ export class TestComponentComponent implements OnInit {
   
   async putcomponentMethodApi() {
     if (this.ApiserviceComponent) {
-       let result = this.ApiserviceComponent.apiputmethod(this.employeeRequest)  .subscribe(
-          (response: any) => {
+       let result = this.ApiserviceComponent.apiputmethod(this.employeeRequest).subscribe(
+          response => {
             console.log(response);
             result = response;
             alertify.success(result);
@@ -130,11 +130,10 @@ export class TestComponentComponent implements OnInit {
 
       this.ApiserviceComponent.apideletemethod(this.employeeRequest.employeeID)
         .subscribe(
-          (response: any) => {
+          response => {
             console.log(response);
             result = response;
             alertify.success(result);
-
           })
     } else {
       console.error('Child component is not availablee!');
