@@ -6,6 +6,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutes } from './app.routes';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { TestSuiteModule } from './Testing-Suite/test-suite.module';
+import { TestSuiteRoutes } from './Testing-Suite/test-suite.routes';
 
 
 
@@ -18,7 +19,8 @@ import { TestSuiteModule } from './Testing-Suite/test-suite.module';
     BrowserModule,
     TestSuiteModule,
     HttpClientModule,
-    AppRoutes
+    AppRoutes,
+    TestSuiteRoutes
   ],
   providers:[provideAnimationsAsync()],
   bootstrap: [AppComponent]

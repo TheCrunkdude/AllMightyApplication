@@ -8,10 +8,12 @@ import { AppRoutes } from '../app.routes';
 import { Router } from '@angular/router';
 import { MaterialModule } from './MaterialModule';
 import { FormsModule } from '@angular/forms';
+import { TestSuiteRoutes } from './test-suite.routes';
+import { ScalableComponent } from './scalable/scalable.component';
 
 @NgModule({
-  declarations: [TestComponentComponent],
-  imports: [CommonModule, BrowserModule,AppRoutes, MaterialModule, FormsModule],
+  declarations: [TestComponentComponent, ScalableComponent],
+  imports: [CommonModule, BrowserModule,AppRoutes, MaterialModule, FormsModule, TestSuiteRoutes],
   providers:[provideHttpClient()]
 })
 

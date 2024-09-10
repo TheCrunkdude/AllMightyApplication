@@ -5,7 +5,6 @@ import { AppComponent } from './app.component';
 
 
 export const routes: Routes = [
-    { path: 'Test', component: TestComponentComponent },
     {path: 'home', component: AppComponent}
 ];
 @NgModule({
