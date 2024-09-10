@@ -13,7 +13,7 @@ import { EmployeeTable } from '../interfaces/employeetable';
 export class Apitest2Service {
 
 
-  private apiUrl = 'https://localhost:7161/'; // Replace with your API endpoint
+  private apiUrl = 'https://localhost:7288/'; // Replace with your API endpoint
 
 
   constructor(private http: HttpClient) { } // Inject HttpClient
@@ -35,12 +35,12 @@ export class Apitest2Service {
   }
 
   apiputmethod(body: EmployeeTable): Observable<any> {
-    return this.http.put(this.apiUrl + 'UpdateEmployee', body, {responseType: 'json'});
+    return this.http.put(this.apiUrl + 'UpdateEmployee', body, { responseType: 'text' });
   }
 
   apideletemethod(propiedad1: number): Observable<any> {
     const finalurl= this.apiUrl + 'DeleteEmployee?employeeID=' + propiedad1
-    return this.http.delete(finalurl  );
+    return this.http.delete(finalurl, { responseType: 'text' });
 
   }
 

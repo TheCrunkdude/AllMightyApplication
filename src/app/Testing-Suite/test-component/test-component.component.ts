@@ -6,6 +6,7 @@ import { EmployeeTable, EmployeeTable2 } from '../interfaces/employeetable';
 import { MatPaginator } from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
 import * as alertify from 'alertifyjs';
+import { HttpResponse, HttpResponseBase } from '@angular/common/http';
 
 @Component({
   selector: 'app-test-component',
@@ -72,9 +73,6 @@ export class TestComponentComponent implements OnInit {
   async GetemployeesMethod() {
     if (this.ApiserviceComponent) {
 
-      
-      
-
       this.ApiserviceComponent.GetemployeesMethod()
         .subscribe(
           response => {
@@ -111,8 +109,11 @@ export class TestComponentComponent implements OnInit {
   async putcomponentMethodApi() {
     if (this.ApiserviceComponent) {
       let result = 'put';
-      this.ApiserviceComponent.apiputmethod(this.employeeRequest).subscribe();
-      alertify.success('POPO');
+      this.ApiserviceComponent.apiputmethod(this.employeeRequest).subscribe(
+        response => {
+          result = response;
+          alertify.success(result);
+        });
     } else {
       console.error('PutMethod component is not available!');
     }
@@ -126,12 +127,10 @@ export class TestComponentComponent implements OnInit {
 
       this.ApiserviceComponent.apideletemethod(this.employeeRequest.employeeID)
         .subscribe(
-          (response: any) => {
-            console.log(response);
+          response => {
             result = response;
             alertify.success(result);
-
-          })
+          });
     } else {
       console.error('Child component is not availablee!');
     }
