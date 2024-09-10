@@ -5,7 +5,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutes } from './app.routes';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import { TestModule } from './Testing-Suite/test.module';
+import { TestSuiteModule } from './Testing-Suite/test-suite.module';
 
 
 
@@ -16,7 +16,7 @@ import { TestModule } from './Testing-Suite/test.module';
   imports: [
     CommonModule,
     BrowserModule,
-    TestModule,
+    TestSuiteModule,
     HttpClientModule,
     AppRoutes
   ],

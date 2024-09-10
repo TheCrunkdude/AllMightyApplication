@@ -15,7 +15,7 @@ import { FormsModule } from '@angular/forms';
   providers:[provideHttpClient()]
 })
 
-export class TestModule {
+export class TestSuiteModule {
 
   constructor(private router: Router){}
 
